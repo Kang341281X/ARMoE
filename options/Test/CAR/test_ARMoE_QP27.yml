@@ -1,0 +1,70 @@
+name: test_ARMoE_QP27
+model_type: OurModel
+scale: 1
+num_gpu: auto
+manual_seed: 10
+
+path:
+  pretrain_network_g: experiments/ARMoE_QP27/models/ARMoE_QP27.pth
+  strict_load_g: True
+
+datasets:
+  test_1:  # the 1st test dataset
+    task: CAR
+    name: Kodak24
+    type: PairedImageDataset
+    dataroot_gt: datasets/test/Kodak24/GT
+    dataroot_lq: datasets/test/Kodak24/QP27
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+
+  test_2:  # the 2st test dataset
+    task: CAR
+    name: McMaster
+    type: PairedImageDataset
+    dataroot_gt: datasets/test/McMaster/GT
+    dataroot_lq: datasets/test/McMaster/QP27
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+
+  test_3:  # the 3st test dataset
+    task: CAR
+    name: CBSD68
+    type: PairedImageDataset
+    dataroot_gt: datasets/test/CBSD68/GT
+    dataroot_lq: datasets/test/CBSD68/QP27
+    filename_tmpl: '{}'
+    io_backend:
+      type: disk
+
+network_g:
+  type: ARMoE
+  upscale: 1
+  in_chans: 3
+  img_size: 64
+  img_range: 1.
+  depth: [6,6,6,6,6,6]
+  embed_dim: 180
+  num_heads: [6,6,6,6,6,6]
+  mlp_ratio: 2
+  resi_connection: '1conv'
+  split_size: [8,32]
+  upsampler: 'icar'
+
+val:
+  save_img: True
+  suffix: ~  # add suffix to saved images, if None, use exp name
+  use_chop: False  # True to save memory, if img too large
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 0
+      test_y_channel: True
+    ssim:
+      type: calculate_ssim
+      crop_border: 0
+      test_y_channel: True
+      

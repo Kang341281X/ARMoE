@@ -1,0 +1,60 @@
+name: test_ARMoE_lightSRx2
+model_type: OurModel
+scale: 2
+num_gpu: auto
+manual_seed: 10
+
+path:
+  pretrain_network_g: experiments/ARMoE_lightSRx2/models/ARMoE_lightSRx2.pth
+  strict_load_g: True
+
+datasets:
+  test_1:  # the 1st test dataset
+    task: SR
+    name: Set5
+    type: PairedImageDataset
+    dataroot_gt: datasets/benchmark/Set5/HR
+    dataroot_lq: datasets/benchmark/Set5/LR_bicubic/X2
+    filename_tmpl: '{}x2'
+    io_backend:
+      type: disk
+
+  test_2:  # the 2st test dataset
+    task: SR
+    name: B100
+    type: PairedImageDataset
+    dataroot_gt: datasets/benchmark/B100/HR
+    dataroot_lq: datasets/benchmark/B100/LR_bicubic/X2
+    filename_tmpl: '{}x2'
+    io_backend:
+      type: disk
+
+network_g:
+  type: ARMoE
+  upscale: 2
+  in_chans: 3
+  img_size: 64
+  img_range: 1.
+  depth: [12]
+  embed_dim: 48
+  num_heads: [6]
+  mlp_ratio: 2
+  resi_connection: '1conv'
+  split_size: [8,32]
+  upsampler: 'lightSR'
+
+val:
+  save_img: True
+  suffix: ~  # add suffix to saved images, if None, use exp name
+  use_chop: False  # True to save memory, if img too large
+
+  metrics:
+    psnr: # metric name, can be arbitrary
+      type: calculate_psnr
+      crop_border: 2
+      test_y_channel: True
+    ssim:
+      type: calculate_ssim
+      crop_border: 2
+      test_y_channel: True
+      
