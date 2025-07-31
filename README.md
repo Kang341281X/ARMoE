@@ -26,12 +26,14 @@
 - NVIDIA GPU + [CUDA](https://developer.nvidia.com/cuda-downloads)
 
 ```bash
+git clone https://github.com/Kang341281X/ARMoE.git
+conda create -n armoe python=3.8
+conda activate armoe
 pip install -r requirements.txt
 python setup.py develop
 ```
 
 ---
-
 
 
 ## Datasets
