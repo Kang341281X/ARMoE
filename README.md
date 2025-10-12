@@ -170,7 +170,7 @@ The test dataset is Kodak24, QP=22.
 <details>
 <summary>Comparison on BD-Rate Reduction</summary>
 <p align="center">
-  <img width="500" src="figs/BD-Rate.png">
+  <img width="500" src="figs/BD-rate.png">
 </p>
 </details>
 
