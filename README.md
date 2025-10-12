@@ -132,7 +132,51 @@ ffmpeg -f rawvideo -pix_fmt yuv420p -s:v widthxheight -pix_fmt yuv420p -i dec.yu
 
 
 ## Results
-<details>
+
+**Ablation Study**
+<p align="center">
+  <img width="500" src="figs/Ablation Study.png">
+</p>
+
+
+**ARMoE vs H.266/VVC**
+
+<p align="center">
+  <img width="500" src="figs/ARMoEvsVVC.png">
+</p>
+
+
+**Comparison on Different Loop Filter Configurations**
+The test dataset is Kodak24, QP=22.
+<p align="center">
+  <img width="500" src="figs/LoopF.png">
+</p>
+
+
+**Comparison on VVC Compression Artifacts Removal**
+<p align="center">
+  <img width="500" src="figs/CAR.png">
+</p>
+
+
+**Comparison on BD-Rate Reduction**
+<p align="center">
+  <img width="500" src="figs/BD-rate.png">
+</p>
+
+
+**Comparison on Lightweight Image Super-Resolution**
+<p align="center">
+  <img width="500" src="figs/LSR.png">
+</p>
+
+
+
+
+
+
+
+<!-- <details>
 <summary>Ablation Study</summary>
 
 <p align="center">
@@ -180,7 +224,7 @@ The test dataset is Kodak24, QP=22.
 <p align="center">
   <img width="500" src="figs/LSR.png">
 </p>
-</details>
+</details> -->
 
 ---
 
