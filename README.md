@@ -47,8 +47,9 @@ Used training and testing sets can be downloaded as follows:
 
 
 ### Run the following script to create VVC-CAR dataset:
+The download address of the codec tool is https://drive.google.com/drive/folders/17VsQze69V1QnX0pdm60gm1c3-oqdi4wB
 
-- Place the VTM-20.0 codec and ffmpeg files in the same directory as the high-quality image folder.
+Place the VTM-20.0 codec and ffmpeg files in the same directory as the high-quality image folder.
 
 ```shell
 # step1: Convert image from png format to yuv format
@@ -133,8 +134,27 @@ ffmpeg -f rawvideo -pix_fmt yuv420p -s:v widthxheight -pix_fmt yuv420p -i dec.yu
 ## Results
 <details>
 <summary>Ablation Study</summary>
+
 <p align="center">
-  <img width="500" src="figs/Data2.png">
+  <img width="500" src="figs/Ablation Study.png">
+</p>
+</details>
+
+
+<details>
+<summary>ARMoE vs H.266/VVC</summary>
+
+<p align="center">
+  <img width="500" src="figs/ARMoEvsVVC.png">
+</p>
+</details>
+
+
+<details>
+<summary>Comparison on Different Loop Filter Configurations</summary>
+The test dataset is Kodak24, QP=22.
+<p align="center">
+  <img width="500" src="figs/LoopF.png">
 </p>
 </details>
 
@@ -142,7 +162,7 @@ ffmpeg -f rawvideo -pix_fmt yuv420p -s:v widthxheight -pix_fmt yuv420p -i dec.yu
 <details>
 <summary>Comparison on VVC Compression Artifacts Removal</summary>
 <p align="center">
-  <img width="500" src="figs/Data1.png">
+  <img width="500" src="figs/CAR.png">
 </p>
 </details>
 
@@ -150,7 +170,7 @@ ffmpeg -f rawvideo -pix_fmt yuv420p -s:v widthxheight -pix_fmt yuv420p -i dec.yu
 <details>
 <summary>Comparison on BD-Rate Reduction</summary>
 <p align="center">
-  <img width="500" src="figs/Data3.png">
+  <img width="500" src="figs/BD-Rate.png">
 </p>
 </details>
 
@@ -158,7 +178,7 @@ ffmpeg -f rawvideo -pix_fmt yuv420p -s:v widthxheight -pix_fmt yuv420p -i dec.yu
 <details>
 <summary>Comparison on Lightweight Image Super-Resolution</summary>
 <p align="center">
-  <img width="500" src="figs/Data4.png">
+  <img width="500" src="figs/LSR.png">
 </p>
 </details>
 
