@@ -12,13 +12,6 @@
 
 
 
-## Visual Results On Compression Artifacts Removal
-![](figs/Vision.png)
-
----
-
-
-
 ## Environment and Installation
 
 - Python 3.8
@@ -156,6 +149,12 @@ The test dataset is Kodak24, QP=22.
 **Comparison on VVC Compression Artifacts Removal**
 <p align="center">
   <img width="900" src="figs/CAR.png">
+</p>
+
+
+**Visual Results On Compression Artifacts Removal**
+<p align="center">
+  <img width="900" src="figs/Vision.png">
 </p>
 
 
