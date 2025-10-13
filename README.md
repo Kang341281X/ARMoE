@@ -135,7 +135,7 @@ ffmpeg -f rawvideo -pix_fmt yuv420p -s:v widthxheight -pix_fmt yuv420p -i dec.yu
 
 **Ablation Study**
 <p align="center">
-  <img width="700" src="figs/Ablation Study.png">
+  <img width="800" src="figs/Ablation Study.png">
 </p>
 
 
@@ -159,6 +159,12 @@ The test dataset is Kodak24, QP=22.
 </p>
 
 
+**Floating Point Operations**
+<p align="center">
+  <img width="180" src="figs/Flops.png">
+</p>
+
+
 **Comparison on BD-Rate Reduction**
 <p align="center">
   <img width="900" src="figs/BD-rate.png">
@@ -169,8 +175,6 @@ The test dataset is Kodak24, QP=22.
 <p align="center">
   <img width="500" src="figs/LSR.png">
 </p>
-
-
 
 
 
