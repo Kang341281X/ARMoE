@@ -165,6 +165,12 @@ The test dataset is Kodak24, QP=22.
 </p>
 
 
+**Local Attribution Maps**
+<p align="center">
+  <img width="900" src="figs/LAM.png">
+</p>
+
+
 **Comparison on BD-Rate Reduction**
 <p align="center">
   <img width="900" src="figs/BD-rate.png">
