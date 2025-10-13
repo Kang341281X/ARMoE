@@ -161,7 +161,7 @@ The test dataset is Kodak24, QP=22.
 
 **Floating Point Operations**
 <p align="center">
-  <img width="180" src="figs/Flops.png">
+  <img width="180" src="figs/FLOPs.png">
 </p>
 
 
