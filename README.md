@@ -1,4 +1,4 @@
-# Compression Artifacts Removal based on Frequency Domain Mixture of Experts
+# Compression Artifacts Removal based on Frequency Domain Mixture of Experts, AAAI 2026
 
 ---
 
